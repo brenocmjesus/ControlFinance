@@ -1,0 +1,291 @@
+        /* id=# class=.*/
+        /* essa tag reseta todas as configurações da pagina*/
+        
+         :root {
+            --darkblue: #363f5f;
+            --green: #49AA26;
+            --ligth-green: #3dd705;
+            --red: #e92929;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* TAMANHO PADRÃO DA FONTE HTML ====================*/
+        
+        html {
+            font-size: 93.75%;
+        }
+        
+        body {
+            background: rgb(211, 210, 210);
+            font-family: "Poppins";
+        }
+        
+        .sr-only {
+            /*SCREAM READER OLNLY*/
+            position: absolute;
+            /*position absolute é sempre relativo ao pai que ele está absoluto é cima e a esquerda*/
+            width: 1px;
+            height: 1px;
+            /*tricks css*/
+            /* tudo isso é para deixar o título na tela invisível aos olhos mas um leitor de tela consegue ler*/
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        .container {
+            width: min(90vw, 800px);
+            /* minimo de view ou px - largura da tela - função min procura o menor dos valores passados*/
+            margin: auto;
+        }
+        /*Titles ===========================================*/
+        
+        h2 {
+            margin-top: 3.2rem;
+            margin-bottom: 0.8rem;
+            color: #363f5f;
+            font-weight: normal;
+        }
+        /* links and buttons ===============================*/
+        
+        a {
+            color: var(--green);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: var(--ligth-green);
+        }
+        
+        button {
+            width: 100%;
+            height: 50px;
+            border: none;
+            color: white;
+            background: var(--green);
+            padding: 0;
+            border-radius: 00.25rem;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: var(--ligth-green);
+        }
+        
+        .button.new {
+            margin-bottom: 0.8rem;
+            display: inline-block;
+        }
+        
+        .button.cancel {
+            color: var(--red);
+            border: 2px var(--red) solid;
+            border-radius: 0.25rem;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.6;
+        }
+        
+        .button.cancel:hover {
+            opacity: 1;
+        }
+        /*header ===========================================*/
+        
+        header {
+            background: #2d4A22;
+            padding: 2rem 0 10rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            color: white;
+            font-weight: 100;
+        }
+        
+        #logo {
+            color: white;
+            font-weight: 100;
+        }
+        /*balance ===========================================*/
+        
+        #balance {
+            margin-top: -8rem;
+        }
+        
+        #balance h2 {
+            color: white;
+            margin-top: 0;
+        }
+        /*Cards ===========================================*/
+        
+        .card {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 0.25rem;
+            margin-bottom: 2rem;
+            color: var(--darkblue);
+            /*variavel criada lá em cima*/
+        }
+        
+        .card h3 {
+            font-weight: normal;
+            font-size: 1rem;
+            display: flex;
+            /* quebra o comportamento do html padrão e coloca um ao lado do outro*/
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .card p {
+            font-size: 2rem;
+            line-height: 3rem;
+            margin-top: 1rem;
+        }
+        
+        .card.total {
+            background: var(--green);
+            color: white;
+        }
+        /*table ===========================================*/
+        
+        #data-table {
+            width: 100%;
+            border-spacing: 0 0.5rem;
+            color: #969cb3;
+        }
+        
+        table thead tr th:first-child,
+        table tbody tr td:first-child {
+            border-radius: 0.5rem 0 0 0.5rem;
+        }
+        
+        table thead tr th:last-child,
+        table tbody tr td:last-child {
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        
+        table td {
+            background: white;
+            padding: 1rem 2rem;
+            font-weight: normal;
+            color: #969cb3;
+        }
+        
+        table tbody tr {
+            opacity: 0.7;
+        }
+        
+        table tbody tr:hover {
+            opacity: 1;
+        }
+        
+        table th {
+            background: white;
+            color: #969cb3;
+            font-weight: normal;
+            text-align: left;
+            padding: 1rem 1rem;
+        }
+        
+        td.description {
+            color: var(--darkblue);
+        }
+        
+        td.income {
+            color: #12a454;
+        }
+        
+        td.expense {
+            color: #e92929;
+        }
+        /*Modal ===========================================*/
+        
+        .modal-overlay {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal {
+            background: #f0f2f5;
+            padding: 2.4rem;
+        }
+        /*FORM========================================*/
+        
+        #form {
+            max-width: 500px;
+        }
+        
+        #form hw {
+            margin-top: 0;
+        }
+        
+        input {
+            border: none;
+            border-radius: 0.2rem;
+            padding: 0.8rem;
+            width: 100%;
+        }
+        
+        .input-group {
+            margin-top: 0.8rem;
+        }
+        
+        .input-group small {
+            opacity: 0.4;
+        }
+        
+        .input-group.actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .input-group.actions .button,
+        .input-group.actions button {
+            width: 48%;
+        }
+        /*footer ===========================================*/
+        
+        footer {
+            text-align: center;
+            padding: 4rem 0 2rem;
+            color: var(--darkblue);
+            opacity: 0.6;
+        }
+        /* RESPONSIVE =======================================*/
+        /*at (@) rules regras que recebem arroba*/
+        
+        @media (min-width: 800px) {
+            html {
+                font-size: 87.5%;
+            }
+            #balance {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                /*ou repeat (3, 1fr);*/
+                gap: 2rem;
+            }
+        }
